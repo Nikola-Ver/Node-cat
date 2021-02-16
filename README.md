@@ -1,3 +1,3 @@
 # Node-cat
 
-This is cat written in node js for Windows
+This is cat written in Node js for Windows
