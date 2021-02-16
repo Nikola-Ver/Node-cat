@@ -25,7 +25,11 @@ if ('await' === argv[argv.length - 1].toLowerCase()) {
 
 (async () => {
   for (let i = 2; i < argv.length; ++i) {
-    if (!fs.existsSync(argv[i])) continue;
+    try {
+      if (!fs.statSync(argv[i]).isFile()) continue;
+    } catch {
+      continue;
+    }
 
     const fileContent = fs.readFileSync(argv[i]);
     console.log(`${headerColor}${argv[i]}\n\n${contentColor}${fileContent}`);
