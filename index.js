@@ -5,7 +5,7 @@ const argv = process.argv;
 let headerColor = colors.FgCyan;
 let contentColor = colors.FgWhite;
 
-if (/colors:/gi.exec(argv[argv.length - 1]) !== null) {
+if (/colors: /gi.exec(argv[argv.length - 1]) !== null) {
   const [newHeaderColor, newContentColor] = argv[argv.length - 1]
     .match(/(?<=colors: ).*/gi)[0]
     .split(' ');
